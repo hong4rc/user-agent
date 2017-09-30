@@ -1,0 +1,38 @@
+{
+    "manifest_version": 2,
+    "name": "Fake user-agent",
+    "description": "Change your user-argent",
+    "version": "0.0.1",
+    "author": "Anh Hồng",
+    "icons": {
+        "16": "icon.png",
+        "48": "icon.png",
+        "128": "icon.png"
+    },
+    "browser_action": {
+        "default_icon": {
+            "16": "icon.png",
+            "24": "icon.png",
+            "32": "icon.png"
+        },
+        "default_title": "Choose user-agent",
+        "default_popup": "popup.html"
+    },
+    "options_ui": {
+        "chrome_style": true,
+        "page": "popup.html"
+    },
+    "background": {
+        "scripts": [
+            "js/background.js"
+        ],
+        "persistent": true
+    },
+    "permissions": [
+        "webRequest",
+        "webRequestBlocking",
+        "storage",
+        "notifications",
+        "<all_urls>"
+    ]
+}
