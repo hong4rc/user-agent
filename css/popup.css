@@ -1,3 +1,27 @@
 body {
     min-width: 300px;
 }
+
+.input-group > input[type="radio"] {
+    display: none;
+}
+
+label.input-group {
+    width: 100%;
+}
+
+input[type="radio"] ~ .input-group-addon:before {
+    content: "\e014";
+    padding: 2em;
+}
+
+input[type="radio"] ~ .input-group-addon {
+    text-align: left;
+}
+
+input[type="radio"]:checked ~ .input-group-addon {
+    background: #2de821;
+}
+input[type="radio"]:checked ~ .input-group-addon:before {
+    content: "\e013";
+}
