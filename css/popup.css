@@ -22,6 +22,7 @@ input[type="radio"] ~ .input-group-addon {
 input[type="radio"]:checked ~ .input-group-addon {
     background: #2de821;
 }
+
 input[type="radio"]:checked ~ .input-group-addon:before {
     content: "\e013";
 }
