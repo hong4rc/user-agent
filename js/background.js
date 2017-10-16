@@ -1,13 +1,13 @@
 "use strict";
 let userAgent = undefined;
-chrome.storage.sync.get("device", data => {
-    userAgent = data.device;
-});
 let listUA = {
     default: '',
     macintosh: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
     iphone: 'Mozilla/5.0 (iPhone; CPU iPhone OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Version/10.12.6 Mobile Chrome/61.0.3163.100 Safari/537.36'
 };
+chrome.storage.sync.get("device", data => {
+    userAgent = listUA[data.device];
+});
 chrome.webRequest.onBeforeSendHeaders.addListener(changeHeader, {urls: ["<all_urls>"]}, [
     "blocking",
     "requestHeaders"
